@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fleppi.cz — E-mailová a e-commerce strategie 2026–2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --color-bg-primary:      #000326;
+  --color-bg-elevated:     #0C0C42;
+  --color-bg-off-white:    #F7F7F5;
+  --color-surface-light:   #D2D2D2;
+  --color-text-primary:    #FFFFFF;
+  --color-text-secondary:  #A081D1;
+  --color-text-muted:      #A0A3BD;
+  --color-text-dark:       #000000;
+  --color-action-primary:  #0DD4CD;
+  --color-action-hover:    #16BECF;
+  --color-accent-purple:   #CB00D7;
+  --color-accent-mid-purple: #55289E;
+  --color-accent-shopify:  #96BF48;
+  --color-white-soft:      #F8F9F9;
+  --font-heading: 'Kanit', system-ui, sans-serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
+  --font-size-body-sm: 14px;
+  --font-size-body:    16px;
+  --font-size-body-lg: 18px;
+  --font-size-h3:      24px;
+  --font-size-h2:      40px;
+  --font-size-h1:      56px;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --line-height-tight:   1.1;
+  --line-height-heading: 1.2;
+  --line-height-body:    1.6;
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-sm: rgba(0,0,0,0.2) 0px 3px 12px 0px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent-purple) 16%, transparent), transparent 32%),
+    linear-gradient(180deg, var(--color-bg-primary) 0%, #0c0c42 52%, var(--color-bg-primary) 100%);
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-body);
+}
+.page { max-width: 1100px; margin: 0 auto; padding: 72px 24px 100px; }
+section { margin-bottom: 96px; }
+.section-header { margin-bottom: 40px; }
+.eyebrow {
+  display: inline-block; color: var(--color-action-primary); font-family: var(--font-body);
+  font-size: var(--font-size-body-sm); font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+}
+h1 { font-family: var(--font-heading); font-size: clamp(42px, 6vw, var(--font-size-h1)); font-weight: var(--font-weight-bold); line-height: var(--line-height-tight); letter-spacing: -0.02em; color: var(--color-text-primary); }
+h2 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, var(--font-size-h2)); font-weight: var(--font-weight-semibold); line-height: var(--line-height-heading); letter-spacing: -0.02em; color: var(--color-text-primary); }
+h3 { font-family: var(--font-heading); font-size: clamp(18px, 2.4vw, var(--font-size-h3)); font-weight: var(--font-weight-medium); line-height: 1.3; letter-spacing: -0.01em; color: var(--color-text-primary); }
+p { color: var(--color-text-muted); margin-bottom: 14px; font-size: var(--font-size-body); }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 20px; color: var(--color-text-muted); }
+ul li { margin-bottom: 8px; font-size: var(--font-size-body); }
+strong { color: var(--color-text-primary); }
+.section-divider { height: 1px; background: linear-gradient(90deg, var(--color-action-primary), var(--color-accent-purple), transparent); margin-bottom: 40px; opacity: 0.3; }
+.header { margin-bottom: 88px; }
+.header-meta { color: var(--color-text-muted); font-size: var(--font-size-body-sm); margin-bottom: 20px; }
+.header-sub { font-size: var(--font-size-body-lg); color: var(--color-text-muted); max-width: 640px; margin-top: 20px; line-height: var(--line-height-body); }
+.header h1 span { color: var(--color-action-primary); }
+
+/* KPI */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.kpi { position: relative; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-elevated) 95%, #fff 5%) 0%, var(--color-bg-primary) 100%); border: 1px solid color-mix(in srgb, var(--color-text-primary) 10%, transparent); border-radius: var(--radius-md); padding: var(--space-md); box-shadow: var(--shadow-sm); }
+.kpi::before { content: ""; position: absolute; inset: 0 auto auto 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--color-action-primary), var(--color-accent-purple)); opacity: 0.6; }
+.kpi.kpi-hero::before { opacity: 1; }
+.kpi.kpi-hero { background: linear-gradient(135deg, color-mix(in srgb, var(--color-action-primary) 8%, var(--color-bg-elevated)), var(--color-bg-primary)); }
+.kpi-value { font-family: var(--font-heading); font-size: 1.9rem; font-weight: var(--font-weight-bold); color: var(--color-action-primary); letter-spacing: -0.03em; line-height: 1.1; }
+.kpi.kpi-hero .kpi-value { font-size: 2.1rem; }
+.kpi-label { font-size: 0.72rem; font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.09em; color: var(--color-text-muted); margin-top: 6px; }
+.kpi-sub { font-size: 0.7rem; color: color-mix(in srgb, var(--color-text-muted) 60%, transparent); margin-top: 4px; }
+
+/* Layout */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+@media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-md); }
+@media (max-width: 800px) { .three-col { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .three-col { grid-template-columns: 1fr; } }
+.two-col > *, .three-col > * { min-width: 0; }
+.sub-heading { font-family: var(--font-heading); font-size: 1.1rem; font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: 16px; margin-top: 40px; }
+
+/* Table */
+.table-wrap { overflow-x: auto; margin-bottom: 32px; border-radius: var(--radius-md); border: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent); }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+th { text-align: left; font-size: 0.68rem; font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); padding: 12px 16px; background: color-mix(in srgb, var(--color-bg-elevated) 60%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent); }
+td { padding: 11px 16px; border-bottom: 1px solid color-mix(in srgb, var(--color-text-primary) 6%, transparent); color: var(--color-text-muted); vertical-align: middle; }
+td strong { color: var(--color-text-primary); display: block; margin-bottom: 2px; }
+td small { font-size: 0.75rem; color: color-mix(in srgb, var(--color-text-muted) 70%, transparent); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: color-mix(in srgb, var(--color-bg-elevated) 30%, transparent); }
+
+/* Badges */
+.badge { display: inline-block; padding: 2px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: var(--font-weight-semibold); letter-spacing: 0.04em; }
+.badge-green { background: color-mix(in srgb, #4ade80 15%, transparent); color: #4ade80; border: 1px solid color-mix(in srgb, #4ade80 25%, transparent); }
+.badge-yellow { background: color-mix(in srgb, #fbbf24 15%, transparent); color: #fbbf24; border: 1px solid color-mix(in srgb, #fbbf24 25%, transparent); }
+.badge-red { background: color-mix(in srgb, #f87171 15%, transparent); color: #f87171; border: 1px solid color-mix(in srgb, #f87171 25%, transparent); }
+.badge-blue { background: color-mix(in srgb, var(--color-action-primary) 15%, transparent); color: var(--color-action-primary); border: 1px solid color-mix(in srgb, var(--color-action-primary) 25%, transparent); }
+.badge-purple { background: color-mix(in srgb, #e879f9 15%, transparent); color: #e879f9; border: 1px solid color-mix(in srgb, #e879f9 25%, transparent); }
+
+/* Cards */
+.card { background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-elevated) 90%, #fff 10%) 0%, var(--color-bg-primary) 100%); border: 1px solid color-mix(in srgb, var(--color-text-primary) 10%, transparent); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+.card-accent { position: relative; overflow: hidden; }
+.card-accent::before { content: ""; position: absolute; inset: 0 auto auto 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--color-action-primary), var(--color-accent-purple)); }
+
+/* Insight / Alert */
+.insight { background: linear-gradient(135deg, color-mix(in srgb, var(--color-action-primary) 6%, var(--color-bg-elevated)), var(--color-bg-primary)); border: 1px solid color-mix(in srgb, var(--color-action-primary) 20%, transparent); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: 16px; }
+.insight-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-action-primary); margin-bottom: 8px; }
+.alert { background: linear-gradient(135deg, color-mix(in srgb, #f87171 6%, var(--color-bg-elevated)), var(--color-bg-primary)); border: 1px solid color-mix(in srgb, #f87171 25%, transparent); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: 16px; }
+.alert-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #f87171; margin-bottom: 8px; }
+.success { background: linear-gradient(135deg, color-mix(in srgb, #4ade80 6%, var(--color-bg-elevated)), var(--color-bg-primary)); border: 1px solid color-mix(in srgb, #4ade80 20%, transparent); border-radius: var(--radius-md); padding: var(--space-md); margin-bottom: 16px; }
+.success-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #4ade80; margin-bottom: 8px; }
+
+/* Bar / Chart */
+.bar { height: 5px; background: color-mix(in srgb, var(--color-text-primary) 10%, transparent); border-radius: 3px; margin-top: 8px; }
+.bar-fill { height: 5px; background: linear-gradient(90deg, var(--color-action-primary), var(--color-accent-purple)); border-radius: 3px; }
+.chart-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 0.78rem; }
+.chart-label { width: 80px; color: var(--color-text-muted); text-align: right; flex-shrink: 0; }
+.chart-bar-wrap { flex: 1; }
+.chart-bar { height: 22px; border-radius: 4px; background: linear-gradient(90deg, var(--color-action-primary), var(--color-accent-purple)); display: flex; align-items: center; padding-left: 10px; min-width: 50px; }
+.chart-bar span { font-size: 0.7rem; font-weight: 600; color: var(--color-bg-primary); white-space: nowrap; }
+.chart-bar.highlight { background: linear-gradient(90deg, #0DD4CD, #CB00D7); box-shadow: 0 0 12px color-mix(in srgb, var(--color-action-primary) 40%, transparent); }
+.chart-bar.muted { background: color-mix(in srgb, var(--color-bg-elevated) 80%, var(--color-text-muted) 20%); }
+.chart-bar.muted span { color: var(--color-text-muted); }
+
+/* Automation cards */
+.auto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .auto-grid { grid-template-columns: 1fr; } }
+.auto-card { padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent); background: color-mix(in srgb, var(--color-bg-elevated) 40%, transparent); }
+.auto-card.active { border-color: color-mix(in srgb, #4ade80 20%, transparent); }
+.auto-card.inactive { border-color: color-mix(in srgb, #f87171 15%, transparent); opacity: 0.6; }
+.auto-card.seasonal { border-color: color-mix(in srgb, #fbbf24 20%, transparent); }
+.auto-name { font-size: 0.82rem; font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
+.auto-stats { font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.5; }
+.auto-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.dot-green { background: #4ade80; }
+.dot-yellow { background: #fbbf24; }
+.dot-red { background: #f87171; }
+
+/* 365 plan */
+.quarter-block { margin-bottom: 40px; }
+.quarter-label { display: inline-block; font-size: 0.68rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-bg-primary); background: var(--color-action-primary); padding: 4px 14px; border-radius: 100px; margin-bottom: 16px; }
+.quarter-title { font-family: var(--font-heading); font-size: 1.1rem; font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: 16px; }
+.tasks { display: grid; gap: 10px; }
+.task { display: flex; gap: 16px; align-items: flex-start; padding: 16px 20px; background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg-elevated) 90%, #fff 10%) 0%, var(--color-bg-primary) 100%); border: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent); border-radius: var(--radius-md); transition: border-color 160ms ease; }
+.task:hover { border-color: color-mix(in srgb, var(--color-text-primary) 20%, transparent); }
+.task-check { width: 18px; height: 18px; border: 1.5px solid color-mix(in srgb, var(--color-text-primary) 20%, transparent); border-radius: 4px; flex-shrink: 0; margin-top: 3px; }
+.task-body { flex: 1; }
+.task-title { font-size: 0.92rem; font-weight: var(--font-weight-semibold); color: var(--color-text-primary); margin-bottom: 4px; }
+.task-desc { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.55; }
+.task-tag { display: inline-block; padding: 1px 8px; border-radius: 100px; font-size: 0.65rem; font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.06em; margin-left: 7px; vertical-align: middle; }
+.tag-email { background: color-mix(in srgb, var(--color-action-primary) 15%, transparent); color: var(--color-action-primary); border: 1px solid color-mix(in srgb, var(--color-action-primary) 25%, transparent); }
+.tag-shop { background: color-mix(in srgb, #96bf48 15%, transparent); color: #96bf48; border: 1px solid color-mix(in srgb, #96bf48 25%, transparent); }
+.tag-growth { background: color-mix(in srgb, var(--color-accent-purple) 15%, transparent); color: #e879f9; border: 1px solid color-mix(in srgb, var(--color-accent-purple) 25%, transparent); }
+.tag-ops { background: color-mix(in srgb, #f59e0b 15%, transparent); color: #fbbf24; border: 1px solid color-mix(in srgb, #f59e0b 25%, transparent); }
+.tag-content { background: color-mix(in srgb, #f472b6 15%, transparent); color: #f472b6; border: 1px solid color-mix(in srgb, #f472b6 25%, transparent); }
+.priority-high { border-left: 2.5px solid #f87171; }
+.priority-mid { border-left: 2.5px solid #fbbf24; }
+.priority-low { border-left: 2.5px solid #4ade80; }
+
+/* Legend */
+.legend { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: 24px; }
+.legend span { display: flex; align-items: center; gap: 7px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* Product pills */
+.pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill { padding: 4px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; background: color-mix(in srgb, var(--color-bg-elevated) 80%, transparent); border: 1px solid color-mix(in srgb, var(--color-text-primary) 12%, transparent); color: var(--color-text-muted); }
+.pill.accent { background: color-mix(in srgb, var(--color-action-primary) 10%, transparent); border-color: color-mix(in srgb, var(--color-action-primary) 25%, transparent); color: var(--color-action-primary); }
+
+/* Footnote */
+.footnote { font-size: 0.75rem; color: color-mix(in srgb, var(--color-text-muted) 60%, transparent); margin-top: 80px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent); }
+
+/* Month group label */
+.month-group { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-text-muted) 60%, transparent); padding: 8px 16px 4px; background: color-mix(in srgb, var(--color-bg-elevated) 30%, transparent); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HLAVIČKA -->
+  <div class="header">
+    <div class="header-meta">fleppi.cz &nbsp;·&nbsp; Shoptet + Leadhub &nbsp;·&nbsp; Strategický dokument &nbsp;·&nbsp; Duben 2026 – Březen 2027</div>
+    <span class="eyebrow">E-mail &amp; E-commerce</span>
+    <h1>Marketingová strategie<br><span>fleppi 2026–2027</span></h1>
+    <p class="header-sub">Analýza 28 914 Shoptet objednávek a 249 Leadhub kampaní &amp; automations za období Jan 2024 – Mar 2026. Email revenue 2024: <strong>4,58 M Kč</strong> · Email revenue 2025: <strong>3,56 M Kč</strong> = 44,7 % obratu 2025.</p>
+  </div>
+
+  <!-- SEKCE 1: PŘEHLED METRIK -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Přehled</span>
+      <h2>Kde jsme dnes</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="kpi-grid">
+      <div class="kpi kpi-hero">
+        <div class="kpi-value">7,70 M Kč</div>
+        <div class="kpi-label">Celkové tržby s DPH — 2025</div>
+        <div class="kpi-sub">2024: 8,99 M Kč &nbsp;·&nbsp; <span style="color:#ef4444">−14,3 %</span> meziročně</div>
+      </div>
+      <div class="kpi kpi-hero">
+        <div class="kpi-value">3,56 M Kč</div>
+        <div class="kpi-label">Revenue z emailu — 2025</div>
+        <div class="kpi-sub">44,7 % obratu &nbsp;·&nbsp; 2024: 4,58 M Kč &nbsp;·&nbsp; <span style="color:#ef4444">−22 %</span></div>
+      </div>
+      <div class="kpi kpi-hero">
+        <div class="kpi-value">1 018 632 Kč</div>
+        <div class="kpi-label">Nejlepší měsíc — prosinec 2025</div>
+        <div class="kpi-sub">2024 max: leden 2024 = 1 075 800 Kč</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">596 Kč</div>
+        <div class="kpi-label">AOV s DPH — 2025</div>
+        <div class="kpi-sub">492 Kč bez DPH &nbsp;·&nbsp; 2024: 632 Kč s DPH &nbsp;·&nbsp; <span style="color:#ef4444">−5,7 %</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">6 437</div>
+        <div class="kpi-label">Unikátních zákazníků — 2025</div>
+        <div class="kpi-sub">2024: 6 263 zákazníků &nbsp;·&nbsp; <span style="color:#22c55e">+2,8 %</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">31,7 %</div>
+        <div class="kpi-label">Opakující se zákazníci — 2025</div>
+        <div class="kpi-sub">2024: 33,5 % &nbsp;·&nbsp; <span style="color:#ef4444">−1,8 pp</span></div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-value">12 925</div>
+        <div class="kpi-label">Zaplacených objednávek — 2025</div>
+        <div class="kpi-sub">2024: 14 222 obj. &nbsp;·&nbsp; <span style="color:#ef4444">−9,1 %</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">7 543</div>
+        <div class="kpi-label">SKU v katalogu</div>
+        <div class="kpi-sub">583 produktových skupin · aktuální stav</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">~12 000</div>
+        <div class="kpi-label">Kontaktů v Leadhub</div>
+        <div class="kpi-sub">odhad dle největší rozesílky · aktuální stav</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">249</div>
+        <div class="kpi-label">Kampaní + automations celkem</div>
+        <div class="kpi-sub">Jan 2024 – Mar 2026</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">44,4 % → 31,2 %</div>
+        <div class="kpi-label">Průměrný open rate</div>
+        <div class="kpi-sub">2024 → 2025 &nbsp;·&nbsp; benchmark e-com: ~20 %</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">9,78 % → 3,78 %</div>
+        <div class="kpi-label">Průměrný CTR</div>
+        <div class="kpi-sub">2024 → 2025 &nbsp;·&nbsp; <span style="color:#ef4444">−61 % — kritický pokles</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCE 2: OBJEDNÁVKY -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Shoptet data</span>
+      <h2>Analýza objednávek</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <h3 style="margin-bottom: 8px;">Tržby po měsících — 2024 vs. 2025</h3>
+    <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-bottom: 16px;">Šířka pruhů relativní k maximu = leden 2024 (1 075 800 Kč). Shodná osa pro oba roky umožňuje přímé vizuální srovnání.</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0 32px; margin-bottom: 40px;">
+      <div>
+        <div style="font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-text-secondary); margin-bottom:8px;">— 2024 —</div>
+        <div class="chart-row"><div class="chart-label">Led</div><div class="chart-bar-wrap"><div class="chart-bar highlight" style="width:100%"><span>1 075 800 Kč · 1 883 obj. ★</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Úno</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:57.4%"><span>617 459 Kč · 1 047 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Bře</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:59.5%"><span>639 807 Kč · 1 106 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Dub</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:42.8%"><span>460 193 Kč · 790 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Kvě</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:49.2%"><span>528 748 Kč · 895 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Čvn</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:65.7%"><span>706 860 Kč · 1 126 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Čvc</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:49.4%"><span>531 891 Kč · 817 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Srp</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:77.4%"><span>832 572 Kč · 1 292 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Zář</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:68.5%"><span>737 209 Kč · 1 113 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Říj</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:76.3%"><span>820 382 Kč · 1 165 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Lis</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:96.8%"><span>1 041 475 Kč · 1 438 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Pro</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:92.6%"><span>995 982 Kč · 1 550 obj.</span></div></div></div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-text-secondary); margin-bottom:8px;">— 2025 —</div>
+        <div class="chart-row"><div class="chart-label">Led</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:81.6%"><span>878 005 Kč · 1 675 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Úno</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:46.6%"><span>501 877 Kč · 891 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Bře</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:54.0%"><span>581 352 Kč · 1 075 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Dub</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:33.4%"><span>358 957 Kč · 733 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Kvě</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:34.4%"><span>370 035 Kč · 640 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Čvn</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:34.4%"><span>370 237 Kč · 655 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Čvc</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:60.5%"><span>651 253 Kč · 1 025 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Srp</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:44.7%"><span>481 154 Kč · 884 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Zář</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:65.2%"><span>701 021 Kč · 1 030 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Říj</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:89.9%"><span>967 554 Kč · 1 479 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Lis</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:76.3%"><span>820 676 Kč · 1 253 obj.</span></div></div></div>
+        <div class="chart-row"><div class="chart-label">Pro</div><div class="chart-bar-wrap"><div class="chart-bar highlight" style="width:94.7%"><span>1 018 632 Kč · 1 585 obj. ★</span></div></div></div>
+      </div>
+    </div>
+    <div style="margin-top: -24px; margin-bottom: 32px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color:var(--color-text-secondary);">— 2026 (zatím) —</div>
+    <div style="margin-bottom: 40px;">
+      <div class="chart-row"><div class="chart-label">Led 2026</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:80.2%"><span>862 972 Kč · 1 497 obj.</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Úno 2026</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:41.6%"><span>447 949 Kč · 809 obj.</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Bře 2026</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:36.6%"><span>394 193 Kč · 657 obj. (neúplný)</span></div></div></div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="insight">
+          <div class="insight-label">Dvě silné sezóny</div>
+          <p><strong>Back-to-school (Čvc–Říj)</strong> a <strong>Q4 / Novoroční (Říj–Led)</strong> tvoří dohromady přes 60 % ročního obratu. Mimo sezónu (Dub–Čvn) tržby klesají na 35–37 % maxima — typické pro plánování a diáře.</p>
+        </div>
+        <div class="insight">
+          <div class="insight-label">Prosinec 2025 — rekord a emailová síla</div>
+          <p>Email kampaně v říjnu a listopadu (🥳 Narozeniny série + Velký týden malých firem) vygenerovaly dohromady přes <strong>630k Kč</strong>, což přímo přispělo k rekordnímu Q4. Silná korelace mezi email aktivitou a tržbami.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 1rem; margin-bottom: 14px;">Hodnota objednávky</h3>
+        <div class="chart-row"><div class="chart-label" style="width:110px;">&lt; 300 Kč</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:27.6%; background:linear-gradient(90deg,#f87171,#ef4444)"><span>27,6 %</span></div></div></div>
+        <div class="chart-row"><div class="chart-label" style="width:110px;">300–600 Kč</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:38.1%"><span>38,1 %</span></div></div></div>
+        <div class="chart-row"><div class="chart-label" style="width:110px;">600–1 000 Kč</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:19.8%"><span>19,8 %</span></div></div></div>
+        <div class="chart-row"><div class="chart-label" style="width:110px;">1 000–2 000 Kč</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:11.2%"><span>11,2 %</span></div></div></div>
+        <div class="chart-row"><div class="chart-label" style="width:110px;">2 000+ Kč</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:3.3%; background:linear-gradient(90deg,#CB00D7,#a855f7)"><span>3,3 %</span></div></div></div>
+        <p style="font-size:0.78rem; margin-top:12px;">AOV <strong>611 Kč s DPH / 505 Kč bez DPH</strong> · Medián <strong>444 Kč</strong> · Doprava zdarma nad 1 600 Kč — 65 % objednávek je pod tímto prahem, tedy velký upsell potenciál.</p>
+      </div>
+    </div>
+
+    <div class="sub-heading">Top produkty dle počtu prodaných kusů</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Produkt</th><th>Kategorie</th><th>Ks</th><th>Email příležitost</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Samolepky na přání / vlastní text</strong><small>2 produkty, 1 položka — přejmenováno v průběhu roku</small></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>3 016</strong></td><td>Cross-sell k diářům</td></tr>
+          <tr><td>2</td><td><strong>Samolepky Vlajky</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>1 213</strong></td><td>Set nabídka</td></tr>
+          <tr><td>3</td><td><strong>Dárkové samolepky Veselé Vánoce | 2ks</strong></td><td><span class="badge badge-yellow">Sezónní</span></td><td><strong>939</strong></td><td>Q4 kampaň, advent</td></tr>
+          <tr><td>4</td><td><strong>Samolepky Radost sobě — Radost dětem</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>864</strong></td><td>Dárková kampaň</td></tr>
+          <tr><td>5</td><td><strong>Samolepky Narozeniny a svátek</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>859</strong></td><td>Narozeninový flow</td></tr>
+          <tr><td>6</td><td><strong>Samolepky Návyky malé</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>830</strong></td><td>Habit tracking content</td></tr>
+          <tr><td>7</td><td><strong>Náplň do diáře — tečkované listy</strong></td><td><span class="badge badge-blue">Náplně</span></td><td><strong>815</strong></td><td>Post-purchase follow-up</td></tr>
+          <tr><td>8</td><td><strong>Samolepky Srdíčka | průsvitné</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>789</strong></td><td>Valentýn kampaň</td></tr>
+          <tr><td>9</td><td><strong>Náplň do diáře — Měsíční přehledy 2026</strong></td><td><span class="badge badge-blue">Náplně</span></td><td><strong>769</strong></td><td>Novoroční flow</td></tr>
+          <tr><td>10</td><td><strong>Samolepky Čísla — mini kulatá</strong></td><td><span class="badge badge-purple">Samolepky</span></td><td><strong>764</strong></td><td>Organizační content</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SEKCE: MEZIROČNÍ SROVNÁNÍ -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Meziroční srovnání</span>
+      <h2>2024 vs. 2025 — kde klesl výkon a proč</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-value">14 222 → 12 925</div>
+        <div class="kpi-label">Počet objednávek 2024 vs. 2025</div>
+        <div class="kpi-sub" style="color:#ef4444">−9,1 %</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">8,99 M → 7,70 M Kč</div>
+        <div class="kpi-label">Revenue 2024 vs. 2025</div>
+        <div class="kpi-sub" style="color:#ef4444">−14,3 %</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">632 → 596 Kč</div>
+        <div class="kpi-label">AOV s DPH 2024 vs. 2025</div>
+        <div class="kpi-sub" style="color:#ef4444">−5,7 %</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">33,5 % → 31,7 %</div>
+        <div class="kpi-label">Opakující se zákazníci</div>
+        <div class="kpi-sub" style="color:#ef4444">−1,8 pp · retence slábne</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Měsíc</th>
+            <th>2024 revenue</th>
+            <th>2025 revenue</th>
+            <th>Δ% revenue</th>
+            <th>2024 obj.</th>
+            <th>2025 obj.</th>
+            <th>Δ% obj.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Leden</strong></td>
+            <td>1 075 800 Kč</td>
+            <td>878 005 Kč</td>
+            <td><span class="badge badge-red">−18 % ⚠</span></td>
+            <td>1 883</td>
+            <td>1 675</td>
+            <td><span class="badge badge-yellow">−11 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Únor</strong></td>
+            <td>617 459 Kč</td>
+            <td>501 877 Kč</td>
+            <td><span class="badge badge-yellow">−19 %</span></td>
+            <td>1 047</td>
+            <td>891</td>
+            <td><span class="badge badge-yellow">−15 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Březen</strong></td>
+            <td>639 807 Kč</td>
+            <td>581 352 Kč</td>
+            <td><span class="badge badge-yellow">−9 %</span></td>
+            <td>1 106</td>
+            <td>1 075</td>
+            <td><span class="badge badge-blue">−3 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Duben</strong></td>
+            <td>460 193 Kč</td>
+            <td>358 957 Kč</td>
+            <td><span class="badge badge-yellow">−22 %</span></td>
+            <td>790</td>
+            <td>733</td>
+            <td><span class="badge badge-yellow">−7 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Květen</strong></td>
+            <td>528 748 Kč</td>
+            <td>370 035 Kč</td>
+            <td><span class="badge badge-red">−30 % ⚠</span></td>
+            <td>895</td>
+            <td>640</td>
+            <td><span class="badge badge-red">−29 % ⚠</span></td>
+          </tr>
+          <tr>
+            <td><strong>Červen</strong></td>
+            <td>706 860 Kč</td>
+            <td>370 237 Kč</td>
+            <td><span class="badge badge-red">−48 % ⚠</span></td>
+            <td>1 126</td>
+            <td>655</td>
+            <td><span class="badge badge-red">−42 % ⚠</span></td>
+          </tr>
+          <tr>
+            <td><strong>Červenec</strong></td>
+            <td>531 891 Kč</td>
+            <td>651 253 Kč</td>
+            <td><span class="badge badge-green">+22 %</span></td>
+            <td>817</td>
+            <td>1 025</td>
+            <td><span class="badge badge-green">+25 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Srpen</strong></td>
+            <td>832 572 Kč</td>
+            <td>481 154 Kč</td>
+            <td><span class="badge badge-red">−42 % ⚠</span></td>
+            <td>1 292</td>
+            <td>884</td>
+            <td><span class="badge badge-red">−32 % ⚠</span></td>
+          </tr>
+          <tr>
+            <td><strong>Září</strong></td>
+            <td>737 209 Kč</td>
+            <td>701 021 Kč</td>
+            <td><span class="badge badge-blue">−5 %</span></td>
+            <td>1 113</td>
+            <td>1 030</td>
+            <td><span class="badge badge-yellow">−7 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Říjen</strong></td>
+            <td>820 382 Kč</td>
+            <td>967 554 Kč</td>
+            <td><span class="badge badge-green">+18 %</span></td>
+            <td>1 165</td>
+            <td>1 479</td>
+            <td><span class="badge badge-green">+27 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Listopad</strong></td>
+            <td>1 041 475 Kč</td>
+            <td>820 676 Kč</td>
+            <td><span class="badge badge-yellow">−21 %</span></td>
+            <td>1 438</td>
+            <td>1 253</td>
+            <td><span class="badge badge-yellow">−13 %</span></td>
+          </tr>
+          <tr>
+            <td><strong>Prosinec</strong></td>
+            <td>995 982 Kč</td>
+            <td>1 018 632 Kč</td>
+            <td><span class="badge badge-green">+2 %</span></td>
+            <td>1 550</td>
+            <td>1 585</td>
+            <td><span class="badge badge-green">+2 %</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col">
+      <div class="insight">
+        <div class="insight-label">Hlavní viník: výpadek emailové aktivity v létě</div>
+        <p>Červen 2024 obrat = <strong>706 860 Kč</strong> (1 126 obj.) → červen 2025 = <strong>370 237 Kč</strong> (655 obj.) = −48 %. Srpen 2024 = <strong>832 572 Kč</strong> (1 292 obj.) → srpen 2025 = <strong>481 154 Kč</strong> (884 obj.) = −42 %. Emailová aktivita v těchto měsících: červen 2024 = 687 974 Kč z 13 kampaní vs. červen 2025 = 146 653 Kč z 9 kampaní; srpen 2024 = 312 919 Kč z 6 kampaní vs. srpen 2025 = 19 545 Kč z 1 kampaně. Letní mystery box 2024 (102k Kč z jednoho emailu) neměl v 2025 náhradu.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Co naopak funguje lépe</div>
+        <p>Červenec 2025 +35 % (narozeninová kampaň série vs. žádná v 2024), říjen 2025 +35 % (Velký týden malých firem). AOV meziročně +1,5 % — zákazníci utrácejí více za objednávku. Problém je tedy akvizice a frekvence nákupů, ne hodnota objednávky.</p>
+      </div>
+    </div>
+
+    <div class="alert">
+      <div class="alert-label">2026 — pokračující pokles</div>
+      <p>Leden 2026 vs. leden 2025: 862 972 Kč vs. 878 005 Kč = <strong>−1,7 %</strong>. Únor 2026 vs. únor 2025: 447 949 Kč vs. 501 877 Kč = <strong>−10,7 %</strong>. Březen 2026 vs. březen 2025: 394 193 Kč vs. 581 352 Kč = <strong>−32,2 %</strong> (březen 2026 je neúplný). Kumulativně Q1 2026 = 1 705 114 Kč vs. Q1 2025 = 1 961 234 Kč = −13,1 %. Bez systematické emailové aktivity hrozí pokračování sestupného trendu.</p>
+    </div>
+  </section>
+
+  <!-- SEKCE 3: EMAIL BROADCAST -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Leadhub — 2024–2026</span>
+      <h2>Analýza broadcast kampaní</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <h3 style="margin-bottom: 24px;">Revenue z broadcast emailů po měsících (Jan 2024 – Mar 2026)</h3>
+    <p style="font-size:0.8rem; color: var(--color-text-secondary); margin-bottom: 16px;">Všechny šířky relativní k nejsilnějšímu měsíci = červen 2024 (687 974 Kč). Měřítko je tedy shodné pro oba roky.</p>
+    <div style="margin-bottom: 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-secondary);">— 2024 —</div>
+    <div style="margin-bottom: 32px;">
+      <div class="chart-row"><div class="chart-label">Led 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:52.9%"><span>363 707 Kč · 4 kampaně</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Úno 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:32.3%"><span>222 533 Kč · 4 kampaně</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Bře 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:56.6%"><span>389 602 Kč · 10 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Dub 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:35.6%"><span>244 659 Kč · 8 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Kvě 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:42.8%"><span>294 316 Kč · 12 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Čvn 2024</div><div class="chart-bar-wrap"><div class="chart-bar highlight" style="width:100%"><span>687 974 Kč · 13 kampaní ★ All-time best</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Čvc 2024</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:21.9%"><span>150 762 Kč · 8 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Srp 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:45.5%"><span>312 919 Kč · 6 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Zář 2024</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:22.3%"><span>153 199 Kč · 5 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Říj 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:28.3%"><span>194 775 Kč · 4 kampaně</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Lis 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:45.1%"><span>310 127 Kč · 9 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Pro 2024</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:27.8%"><span>191 408 Kč · 6 kampaní</span></div></div></div>
+    </div>
+    <div style="margin-bottom: 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-secondary);">— 2025 —</div>
+    <div style="margin-bottom: 32px;">
+      <div class="chart-row"><div class="chart-label">Led 2025</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:20.2%"><span>139 127 Kč · 9 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Úno 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:29.2%"><span>201 060 Kč · 10 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Bře 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:40.1%"><span>275 703 Kč · 12 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Dub 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:33.8%"><span>232 337 Kč · 10 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Kvě 2025</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:18.3%"><span>125 964 Kč · 6 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Čvn 2025</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:21.3%"><span>146 653 Kč · 9 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Čvc 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:55.6%"><span>382 346 Kč · 11 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Srp 2025</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:2.8%"><span>19 545 Kč · 1 kampaň ⚠</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Zář 2025</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:17.7%"><span>121 556 Kč · 5 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Říj 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:59.5%"><span>409 299 Kč · 13 kampaní ★ best 2025</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Lis 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:28.7%"><span>197 631 Kč · 7 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Pro 2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:31.3%"><span>215 233 Kč · 8 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Led 2026</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:29.1%"><span>200 488 Kč · 7 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Úno 2026</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:19.8%"><span>136 198 Kč · 7 kampaní</span></div></div></div>
+      <div class="chart-row"><div class="chart-label">Bře 2026</div><div class="chart-bar-wrap"><div class="chart-bar muted" style="width:13.2%"><span>90 622 Kč · 7 kampaní</span></div></div></div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 32px;">
+      <div class="card">
+        <div class="card-title">Broadcast souhrn — 2024</div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">3,86 M Kč</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Revenue (Jan–Dec 2024)</div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">44,4 %</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Průměrný open rate</div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">9,78 %</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Průměrný CTR</div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">108</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Kampaní</div></div>
+        </div>
+      </div>
+      <div class="card card-accent">
+        <div class="card-title">Broadcast souhrn — 2025</div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">2,55 M Kč</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Revenue (Mar 2025–Feb 2026) <span style="color:#ef4444">−34 %</span></div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">31,2 %</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Průměrný open rate <span style="color:#ef4444">−30 %</span></div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">3,78 %</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Průměrný CTR <span style="color:#ef4444">−61 %</span></div></div>
+          <div><div style="font-size:1.4rem; font-weight:700; font-family:var(--font-heading)">103</div><div style="font-size:0.75rem; color:var(--color-text-secondary)">Kampaní</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert" style="margin-bottom: 32px;">
+      <div class="alert-label">Varovný signál: CTR propadl o 61 %</div>
+      <p>Open rate klesl z 44,4 % na 31,2 % (−30 %) — to je částečně způsobeno růstem listiny a změnou Apple MPP měření. Ale CTR z 9,78 % na 3,78 % je pokles o 61 % a nelze ho vysvětlit technicky. Znamená, že lidé emaily sice otevírají, ale neklikají — obsah nebo CTA ztrácejí relevanci. Tento pokles přímo vysvětluje pokles revenue/email.</p>
+    </div>
+
+    <div class="sub-heading" style="margin-top: 8px;">Top 15 broadcast kampaní All-Time (dle revenue)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kampaň</th><th>Datum</th><th>Odesláno</th><th>Open rate</th><th>Revenue</th><th>Rev/email</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:color-mix(in srgb,var(--color-action-primary) 6%,transparent)"><td><strong>🔒 Novinky 2/2024 — klub</strong></td><td>30. 1. 2024</td><td>5 648</td><td><span class="badge badge-green">42,4 %</span></td><td><strong>219 465 Kč</strong></td><td><strong>38,9 Kč ★</strong></td></tr>
+          <tr><td><strong>🔒 Novinky 3/2024 — klub</strong></td><td>28. 2. 2024</td><td>7 277</td><td><span class="badge badge-green">35,1 %</span></td><td><strong>164 032 Kč</strong></td><td>22,5 Kč</td></tr>
+          <tr><td><strong>🔐 Novinky 07/24 — klub</strong></td><td>29. 6. 2024</td><td>7 115</td><td><span class="badge badge-yellow">29,2 %</span></td><td><strong>150 466 Kč</strong></td><td>21,1 Kč</td></tr>
+          <tr><td><strong>🔒 Novinky 4/2024 — klub</strong></td><td>30. 3. 2024</td><td>7 215</td><td><span class="badge badge-yellow">29,6 %</span></td><td><strong>122 118 Kč</strong></td><td>16,9 Kč</td></tr>
+          <tr><td><strong>🔒 Novinky 5/2024 — klub</strong></td><td>29. 4. 2024</td><td>7 196</td><td><span class="badge badge-green">32,2 %</span></td><td><strong>120 326 Kč</strong></td><td>16,7 Kč</td></tr>
+          <tr><td><strong>🥳 Narozeniny — zahřívání 03</strong></td><td>14. 7. 2025</td><td>10 977</td><td><span class="badge badge-yellow">29,9 %</span></td><td><strong>118 452 Kč</strong></td><td>10,8 Kč</td></tr>
+          <tr><td><strong>🔐 Novinky 10/2024 — klub</strong></td><td>30. 10. 2024</td><td>5 468</td><td><span class="badge badge-green">50,6 %</span></td><td><strong>110 367 Kč</strong></td><td>20,2 Kč</td></tr>
+          <tr><td><strong>Velký týden malých firem</strong></td><td>13. 10. 2025</td><td>9 329</td><td><span class="badge badge-yellow">27,9 %</span></td><td><strong>107 068 Kč</strong></td><td>11,5 Kč</td></tr>
+          <tr><td><strong>☀️ Letní mystery box — předprodej</strong></td><td>13. 6. 2024</td><td>9 952</td><td><span class="badge badge-green">36,3 %</span></td><td><strong>102 381 Kč</strong></td><td>10,3 Kč</td></tr>
+          <tr><td><strong>🔒 Novinky 6/2024 — klub</strong></td><td>30. 5. 2024</td><td>7 158</td><td><span class="badge badge-yellow">29,3 %</span></td><td><strong>96 079 Kč</strong></td><td>13,4 Kč</td></tr>
+          <tr><td><strong>💥 2+1 zdarma — 1. e-mail</strong></td><td>11. 3. 2024</td><td>7 276</td><td><span class="badge badge-yellow">30,4 %</span></td><td><strong>95 679 Kč</strong></td><td>13,1 Kč</td></tr>
+          <tr><td><strong>🥳 Narozeniny startují</strong></td><td>15. 7. 2025</td><td>10 965</td><td><span class="badge badge-yellow">27,5 %</span></td><td><strong>87 098 Kč</strong></td><td>7,9 Kč</td></tr>
+          <tr><td><strong>🔐 Novinky 10/2024 — klub</strong></td><td>29. 9. 2024</td><td>5 432</td><td><span class="badge badge-green">38,9 %</span></td><td><strong>85 783 Kč</strong></td><td>15,8 Kč</td></tr>
+          <tr><td><strong>🌷 Jarní kolekce (+ DÁREK)</strong></td><td>25. 2. 2025</td><td>10 745</td><td><span class="badge badge-green">54,7 %</span></td><td><strong>82 997 Kč</strong></td><td>7,7 Kč</td></tr>
+          <tr><td><strong>🔒 Novinky 08/2024 — klub</strong></td><td>30. 7. 2024</td><td>7 081</td><td><span class="badge badge-yellow">29,8 %</span></td><td><strong>81 131 Kč</strong></td><td>11,5 Kč</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.78rem; color:var(--color-text-secondary); margin-top: 8px;">★ Nejvyšší rev/email za celé sledované období. Top 10 kampaní 2024 jsou Klub newslettery — průměrný rev/email 19,7 Kč vs. průměr kampaní 2025 = 5,7 Kč.</p>
+
+    <div class="two-col">
+      <div class="insight">
+        <div class="insight-label">Klíčový vzorec: Klub vs. zákazníci</div>
+        <p>Segmentace na "Klub" (loajální zákazníci) vs. "zákazníci" (širší seznam) konzistentně ukazuje: <strong>Klub má OR 29–35 %, zákazníci 22–25 %</strong>. Klub newsletter generuje 3–5× vyšší revenue per email. Klub segment je zlaté aktivum — investovat do jeho péče.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Srpen 2025 — slepá skvrna</div>
+        <p>V srpnu bylo odesláno jen 1 kampaň (19 545 Kč), přestože objednávek bylo 846 (třetí nejnižší měsíc roku). Systematická emailová aktivita v srpnu mohla podpořit back-to-school náladu a připravit zákazníky na září-říjen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCE 4: AUTOMATIONS -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Leadhub — automations</span>
+      <h2>Uvítací sekvence &amp; automations</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="success" style="margin-bottom: 32px;">
+      <div class="success-label">Uvítací sekvence 2025 — celkové výsledky</div>
+      <p>Welcome flow (emaily 1–4) vygeneroval za rok <strong>555 122 Kč z 630 objednávek</strong>. Email č. 1 (Uvítací + slevový kód) sám o sobě přinesl <strong>512 566 Kč při OR 64,1 %</strong> — jasně nejsilnější automation v celém portfoliu s <strong>226,9 Kč/email</strong>.</p>
+    </div>
+
+    <div class="sub-heading" style="margin-top: 0;">Uvítací sekvence — detail (Mar 2025 – Mar 2026)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Email</th><th>Varianta</th><th>Odesláno</th><th>Open rate</th><th>CTR</th><th>Revenue</th><th>Rev/email</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background: color-mix(in srgb, var(--color-action-primary) 4%, transparent);">
+            <td><strong>1 — Uvítací + slevový kód</strong></td>
+            <td><span class="badge badge-blue">S kódem</span></td>
+            <td>2 259</td>
+            <td><span class="badge badge-green">64,1 %</span></td>
+            <td><span class="badge badge-green">20,5 %</span></td>
+            <td><strong>512 566 Kč</strong></td>
+            <td><strong>226,9 Kč</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2 — Hodnota</strong></td>
+            <td><span class="badge badge-blue">S kódem</span></td>
+            <td>1 773</td>
+            <td><span class="badge badge-yellow">31,6 %</span></td>
+            <td>2,9 %</td>
+            <td><strong>47 498 Kč</strong></td>
+            <td>26,8 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>2 — Hodnota</strong></td>
+            <td><span class="badge badge-yellow">Bez kódu</span></td>
+            <td>265</td>
+            <td><span class="badge badge-green">37,0 %</span></td>
+            <td>1,1 %</td>
+            <td>658 Kč</td>
+            <td>2,5 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>3 — Social proof</strong></td>
+            <td><span class="badge badge-blue">S kódem</span></td>
+            <td>1 696</td>
+            <td><span class="badge badge-yellow">29,0 %</span></td>
+            <td>2,2 %</td>
+            <td><strong>28 661 Kč</strong></td>
+            <td>16,9 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>3 — Social proof</strong></td>
+            <td><span class="badge badge-yellow">Bez kódu</span></td>
+            <td>306</td>
+            <td><span class="badge badge-green">38,2 %</span></td>
+            <td>3,9 %</td>
+            <td>4 640 Kč</td>
+            <td>15,2 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>4 — Urgence slevy</strong></td>
+            <td><span class="badge badge-blue">S kódem</span></td>
+            <td>1 626</td>
+            <td><span class="badge badge-yellow">29,8 %</span></td>
+            <td>3,4 %</td>
+            <td><strong>28 571 Kč</strong></td>
+            <td>17,6 Kč</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Pokles mezi emailem 1 a 2</div>
+      <p>Email č. 1 má 226,9 Kč/email, email č. 2 jen 26,8 Kč — propad o 88 %. Tento propad je přirozený (první email s kódem má nejvyšší urgenci), ale rozdíl naznačuje, že emaily 2–4 mohou mít slabší CTA nebo jsou odesílány příliš brzy. Doporučení: testovat timing a obsah emailů 2–4, případně přidat konkrétní produktové doporučení.</p>
+    </div>
+
+    <div class="sub-heading">Ostatní aktivní automations</div>
+    <div class="auto-grid">
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Přání k svátku</div>
+        <div class="auto-stats">11 388 odesláno · 28,6 % OR · <strong>89 351 Kč</strong> · 7,8 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:29%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Košík po 2 hodinách</div>
+        <div class="auto-stats">392 odesláno · 49,0 % OR · <strong>88 220 Kč</strong> · <strong style="color:#4ade80">225,1 Kč/email</strong></div>
+        <div class="bar"><div class="bar-fill" style="width:49%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Expirace bodů</div>
+        <div class="auto-stats">4 390 odesláno · 41,8 % OR · <strong>85 414 Kč</strong> · 19,5 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:42%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Košík po 72 hodinách</div>
+        <div class="auto-stats">825 odesláno · 62,9 % OR · <strong>29 315 Kč</strong> · 35,5 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:63%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>100 bodů a více</div>
+        <div class="auto-stats">679 odesláno · 65,7 % OR · <strong>28 401 Kč</strong> · 41,8 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:66%"></div></div>
+      </div>
+      <div class="auto-card seasonal">
+        <div class="auto-name"><span class="auto-dot dot-yellow"></span>🎄 Adventní kalendář (ukázka)</div>
+        <div class="auto-stats">270 odesláno · <strong>95,6 % OR</strong> · <strong>25 237 Kč</strong> · 93,5 Kč/email · sezónní</div>
+        <div class="bar"><div class="bar-fill" style="width:96%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Zákazník koupil diář, nekoupil náplně</div>
+        <div class="auto-stats">406 odesláno · 53,7 % OR · <strong>15 636 Kč</strong> · 38,5 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:54%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Košík po 24 hodinách</div>
+        <div class="auto-stats">286 odesláno · 40,2 % OR · 12 315 Kč · 43,1 Kč/email</div>
+        <div class="bar"><div class="bar-fill" style="width:40%"></div></div>
+      </div>
+      <div class="auto-card active">
+        <div class="auto-name"><span class="auto-dot dot-green"></span>Doprava zdarma — 4 měsíce od nákupu</div>
+        <div class="auto-stats">2 084 odesláno · 26,0 % OR · 7 147 Kč · 3,4 Kč/email — potenciál nevyužit</div>
+        <div class="bar"><div class="bar-fill" style="width:26%"></div></div>
+      </div>
+      <div class="auto-card inactive">
+        <div class="auto-name"><span class="auto-dot dot-red"></span>Mystery box flows (4 emaily)</div>
+        <div class="auto-stats">0 odesláno — neaktivní · potenciál pro aktivaci v sezóně</div>
+      </div>
+    </div>
+
+    <div class="alert" style="margin-top: 24px;">
+      <div class="alert-label">Abandoned cart — nevyužitý objem</div>
+      <p>Košík 2h dosahuje <strong>225 Kč/email</strong> — srovnatelné s uvítacím emailem. Celkem ale flow odeslal jen <strong>392 + 286 + 825 = 1 503 emailů za rok</strong> při 13 026 objednávkách. Průměrný cart abandonment v e-commerce je 70 %, což by znamenalo ~9 000 opuštěných košíků. Buď je tracking neúplný, nebo napojení Shoptet → Leadhub zachytí jen zlomek košíků. Oprava a škálování = přímý dopad na revenue.</p>
+    </div>
+  </section>
+
+  <!-- SEKCE 5: PRODUKTOVÁ STRATEGIE -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Produktová strategie</span>
+      <h2>Kde je skutečný motor businessu</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="alert" style="margin-bottom: 32px;">
+      <div class="alert-label">Klíčová diagnóza</div>
+      <p>fleppi nemá jeden silný "tahák" s vysokou marží — a to je zároveň největší riziko i největší příležitost. Samolepky (průměr <strong>17 Kč/ks</strong>) jsou skvělé pro frekvenční nákupy a akvizici, ale nedávají dostatek prostoru pro marži ani email storytelling. Skutečný motor businessu je jinde — a data ho jasně ukazují.</p>
+    </div>
+
+    <h3 style="margin-bottom: 24px;">Revenue podle kategorií</h3>
+
+    <div style="margin-bottom: 40px;">
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Náplně do diáře</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar highlight" style="width:100%"><span>2 706 172 Kč · 33,4 % · ø 128 Kč/ks</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Samolepky (vše)</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="width:81.9%"><span>2 219 000 Kč · ~27 % · ø 17 Kč/ks</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Diáře &amp; boxy</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="width:41.9%"><span>1 134 682 Kč · 14,0 % · ø 192 Kč/ks</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Ostatní</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar muted" style="width:38.6%"><span>1 044 583 Kč · 12,9 %</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Mystery boxy</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="width:17.3%"><span>467 915 Kč · 5,8 %</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Psací potřeby</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="width:15.9%"><span>430 303 Kč · 5,3 % · ø 78 Kč/ks</span></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label" style="width:130px; font-size:0.75rem;">Sety &amp; kity</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="width:2.4%; background:linear-gradient(90deg,#CB00D7,#a855f7)"><span style="white-space:nowrap; margin-left:110px; color:var(--color-text-muted)">65 355 Kč · ø 199 Kč/ks — 328 ks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-heading" style="margin-top: 0;">Top produkty dle revenue (ne kusů)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Produkt</th><th>Kategorie</th><th>Revenue</th><th>Ks</th><th>Prům. cena/ks</th><th>Strategická role</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background: color-mix(in srgb, var(--color-action-primary) 4%, transparent);">
+            <td>1</td>
+            <td><strong>Náplň — Kalendář 2026 T2S vertikální</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>152 287 Kč</strong></td><td>551</td><td><strong>276 Kč</strong></td>
+            <td>Hero — opakovaný nákup</td>
+          </tr>
+          <tr style="background: color-mix(in srgb, var(--color-action-primary) 4%, transparent);">
+            <td>2</td>
+            <td><strong>Náplň — Kalendář 2026 T2S horizontální</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>124 725 Kč</strong></td><td>476</td><td><strong>262 Kč</strong></td>
+            <td>Hero — opakovaný nákup</td>
+          </tr>
+          <tr style="background: color-mix(in srgb, var(--color-action-primary) 4%, transparent);">
+            <td>3</td>
+            <td><strong>Náplň — Kalendář 2026 denní (časy + to do)</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>100 727 Kč</strong></td><td>208</td><td><strong>484 Kč</strong></td>
+            <td>Premium hero</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Náplň — 2026 T2S horizontální linkovaný</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>77 070 Kč</strong></td><td>294</td><td>262 Kč</td>
+            <td>Hero — opakovaný nákup</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Náplň — tečkované listy</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>70 703 Kč</strong></td><td>815</td><td>87 Kč</td>
+            <td>Frekvenční nákup</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Náplň — Měsíční přehledy 2026</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>65 207 Kč</strong></td><td>769</td><td>85 Kč</td>
+            <td>Frekvenční nákup</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Náplň — Kalendář 2026 denní linkovaný</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>60 250 Kč</strong></td><td>126</td><td>478 Kč</td>
+            <td>Premium hero</td>
+          </tr>
+          <tr style="background: color-mix(in srgb, var(--color-accent-purple) 4%, transparent);">
+            <td>8</td>
+            <td><strong>Kovová děrovačka na diáře</strong></td>
+            <td><span class="badge badge-purple">Nástroj</span></td>
+            <td><strong>59 035 Kč</strong></td><td>168</td><td><strong>351 Kč</strong></td>
+            <td>Commitment trigger</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><strong>Náplň — Kalendář 2026 T1S čistý</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>52 473 Kč</strong></td><td>382</td><td>137 Kč</td>
+            <td>Opakovaný nákup</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>Rozdělovače do diáře — transparentní 6ks</strong></td>
+            <td><span class="badge badge-blue">Náplně</span></td>
+            <td><strong>43 307 Kč</strong></td><td>282</td><td>154 Kč</td>
+            <td>Frekvenční doplněk</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="success">
+      <div class="success-label">Skrytý hero produkt: Náplně do diáře</div>
+      <p>Náplně tvoří <strong>33 % obratu (2,7 M Kč)</strong> a klíčové je, že jsou ze své podstaty <strong>roční opakovaný nákup</strong>. Zákazník co koupil Kalendář 2026 ho koupí znovu v 2027. To je subscripční logika bez subscription produktu. Email strategie toto zatím nevyužívá naplno — zákazníci nejsou aktivně oslovováni před startem každého roku s "tvoje oblíbené náplně pro 2027 jsou venku."</p>
+    </div>
+
+    <div class="sub-heading">Strategická doporučení — produktový mix &amp; email</div>
+    <div class="three-col">
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">1. Vybudovat Starter Kit jako vstupní produkt</h3>
+        <p>Chybí jeden jasný "vstupní produkt" pro nového zákazníka. Navrhnout <strong>fyzický nebo virtuální Starter Kit</strong>: binder systém + 2–3 základní náplně + sada samolepek za 600–900 Kč. Jeden produkt, jedna fotka, jasná hodnota "vše co potřebuješ na začátek". Zároveň dostane zákazníka blíže k free shipping prahu a zvýší AOV prvního nákupu.</p>
+        <div class="pill-list"><span class="pill accent">Priorita: Vysoká</span><span class="pill">Dopad na AOV: +30–40 %</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">2. Proměnit náplně v předplatné</h3>
+        <p>Náplně jsou de facto roční subscription. Fleppi to jen nedotáhlo do produktu. Konkrétní kroky: v říjnu emailovat zákazníky co koupili 2026 náplně s "2027 náplně jsou venku — znovu ten samý typ jedním klikem." Dlouhodobě zavést <strong>roční subscription</strong>: zákazník si vybere typ a každý říjen dostane automaticky. Předvídatelný cash-flow, vyšší LTV.</p>
+        <div class="pill-list"><span class="pill accent">Priorita: Střední-Vysoká</span><span class="pill">Potenciál: +LTV 40 %</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">3. Děrovačka jako "commitment signal"</h3>
+        <p>Dvě děrovačky = dva silné commitment signály: <strong>kovová děrovačka na disk systém</strong> (351 Kč, 59k Kč revenue) a <strong>děrovačka pro kroužkové vazby</strong>. Zákazník co koupí děrovačku odcházet ke konkurenci nebude — investoval do konkrétního systému. Oba segmenty by měly dostat dedikovaný email tok s náplněmi přesně pro jejich formát.</p>
+        <div class="pill-list"><span class="pill accent">Priorita: Střední</span><span class="pill">Segment: Commitment zákazníci</span></div>
+      </div>
+    </div>
+    <div class="three-col" style="margin-top: 16px;">
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">4. Samolepky jako akvizice, ne hero</h3>
+        <p>Samolepky (17 Kč/ks) jsou výborný akvizační produkt s nízkým vstupním prahem — první nákup je bezbolestný. Přestat je komunikovat jako hlavní produkt a začít je komunikovat jako <strong>personalizaci k systému plánování</strong>. "Tvůj diář, tvůj styl" = samolepky dokončí to, co náplně a binder začaly.</p>
+        <div class="pill-list"><span class="pill">Role: Akvizice + basket filler</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">5. Sety &amp; kity — dramaticky podexponovaná kategorie</h3>
+        <p>Sety mají průměr <strong>199 Kč/ks</strong> ale prodají se jen 328 ks ročně (65k Kč). To je 10–20× méně než jejich potenciál. Problém je pravděpodobně viditelnost a komunikace — zákazníci nevidí hodnotu setu vs. koupit položky zvlášť. Emailová série s jasným "ušetříš X Kč vs. samostatné položky" může tuto kategorii zdvojnásobit.</p>
+        <div class="pill-list"><span class="pill accent">Priorita: Střední</span><span class="pill">Potenciál: 2–5× objem</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">6. Psací potřeby jako cross-sell k náplním</h3>
+        <p>Psací potřeby (430k Kč, ø 78 Kč/ks) jsou přirozený doplněk k diáři a náplním. Zákazník co si koupí denní diářové listy za 484 Kč má vysokou pravděpodobnost koupě pera (78–150 Kč). Email automation <strong>"koupil náplně → nabídni pero"</strong> je logický cross-sell s vysokou relevancí.</p>
+        <div class="pill-list"><span class="pill">Cross-sell k náplním</span><span class="pill">ø 78 Kč/ks</span></div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top: 24px;">
+      <div class="insight-label">Email strategie přes produktový příběh</div>
+      <p>Místo "kupte naše samolepky" komunikovat <strong>systém plánování ve třech vrstvách</strong>: <strong>Základ</strong> (binder + náplně = roční commitment) → <strong>Nástroje</strong> (pero, děrovačka, rozdělovače = doladění) → <strong>Personalizace</strong> (samolepky, washi pásky = výraz osobnosti). Každá emailová kampaň pak má jasný kontext — zákazník pochopí, v jaké vrstvě se pohybuje a co mu ještě chybí k dokonalému systému.</p>
+    </div>
+
+    <div class="sub-heading">Cross-sell páry — co zákazníci skutečně kupují dohromady</div>
+    <p style="margin-bottom: 24px; font-size: 0.875rem;">Analýza 12 583 objednávek. Počet = objednávky obsahující obě kategorie/produkty zároveň.</p>
+
+    <div class="table-wrap" style="margin-bottom: 32px;">
+      <table>
+        <thead>
+          <tr><th>Kategoriový pár</th><th>Objednávek</th><th>Podíl</th><th>Nejsilnější konkrétní dvojice</th><th>Email akce</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background: color-mix(in srgb, var(--color-action-primary) 5%, transparent);">
+            <td><strong>Náplně + Samolepky</strong></td>
+            <td><strong>4 462</strong></td>
+            <td><span class="badge badge-green">35,5 %</span></td>
+            <td>Měsíční přehledy 2026 + Samolepky Radost sobě (42×)<br><small>Náplň do diáře + Samolepky Popisy na rozdělovače (39×)</small></td>
+            <td>Post-purchase: koupil náplně → nabídni samolepky k organizaci</td>
+          </tr>
+          <tr>
+            <td><strong>Psací + Samolepky</strong></td>
+            <td><strong>1 792</strong></td>
+            <td><span class="badge badge-yellow">14,2 %</span></td>
+            <td>Nekonečná tužka APLI Nordik + Samolepky fleppi 2 archy (43×)<br><small>Nekonečná tužka APLI Mini + Samolepky fleppi 2 archy (24×)</small></td>
+            <td>Bundle: pero + samolepky fleppi jako vstupní sada</td>
+          </tr>
+          <tr>
+            <td><strong>Náplně + Psací potřeby</strong></td>
+            <td><strong>1 367</strong></td>
+            <td><span class="badge badge-yellow">10,9 %</span></td>
+            <td>Gelové pero Uni-ball One + Náplň do gelového pera (22×)<br><small>Nekonečná tužka APLI Nordik + Release Paper (26×)</small></td>
+            <td>Post-purchase: koupil diářové náplně → nabídni pero do diáře</td>
+          </tr>
+          <tr>
+            <td><strong>Diář doplňky + Samolepky</strong></td>
+            <td><strong>964</strong></td>
+            <td><span class="badge badge-yellow">7,7 %</span></td>
+            <td>Bavlněný sáček + Desky na samolepky A6 mléčné (15×)<br><small>Samolepicí kapsy na vizitky + Samolepky Radost sobě (15×)</small></td>
+            <td>Upsell: koupil pouzdro/desky → zákazník "zařizuje" diář, přidej samolepky</td>
+          </tr>
+          <tr>
+            <td><strong>Diář doplňky + Náplně</strong></td>
+            <td><strong>838</strong></td>
+            <td><span class="badge badge-yellow">6,7 %</span></td>
+            <td>Náplň tečkované + Záložkové listy Little Cloud (23×)<br><small>Náplň tečkované + Plastové desky k diáři (18×)</small></td>
+            <td>Bundle: náplně + organizační doplňky jako "kompletní setup"</td>
+          </tr>
+          <tr style="background: color-mix(in srgb, var(--color-accent-purple) 5%, transparent);">
+            <td><strong>Děrovačka + Náplně</strong></td>
+            <td><strong>148</strong></td>
+            <td><span class="badge badge-purple">1,2 %</span></td>
+            <td>Kovová děrovačka + Náplň tečkované (17×)<br><small>Kovová děrovačka + Náplň linkované (16×)</small></td>
+            <td>Dedication flow: koupil děrovačku = disk-committed zákazník → okamžitá nabídka náplní pro jeho systém</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="three-col">
+      <div class="insight">
+        <div class="insight-label">Nejsilnější cross-sell signál</div>
+        <p><strong>35,5 % objednávek</strong> obsahuje náplně + samolepky zároveň. To znamená: zákazník nakupující náplně téměř ve třetině případů přidá samolepky. Post-purchase email "<em>Tvoje náplně jsou na cestě — tady jsou samolepky, které k nim zákaznice nejčastěji přidávají</em>" má přímé datové odůvodnění.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Pero jako impulzivní doplněk</div>
+        <p>Nekonečná tužka APLI Nordik + Samolepky fleppi (43×) je nejčastější konkrétní produktová dvojice mimo náplně. Pero je ideální low-friction přidání do košíku — nízká cena, fyzicky malé, jasná hodnota. Vhodné jako "<em>přidej za 199 Kč do košíku</em>" modul v každém emailu o náplních.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Děrovačka jako VIP signal</div>
+        <p>Koupě děrovačky je nejsilnější signal dlouhodobého zákazníka — investoval do specifického disk systému. 148 objednávek s děrovačkou + náplněmi je malý segment, ale s extrémně vysokou LTV. Tito zákazníci si zaslouží vlastní automation: uvítání do "disk systému" + průvodce náplněmi dle formátu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCE 6: STRATEGIE -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Strategie</span>
+      <h2>Klíčová doporučení</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="two-col">
+      <div>
+        <div class="card card-accent" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">1. Opravit a škálovat abandoned cart tracking</h3>
+          <p>Košíkový flow s 225 Kč/email je druhý nejsilnější automation, ale zachytává jen zlomek skutečných opuštěných košíků. Prověřit Shoptet → Leadhub webhook konfiguraci, spustit testovací nákupy. Potenciál: 5–10× více odeslaných emails = <strong>400–800k Kč/rok</strong>.</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Kritická</span><span class="pill">Potenciál: 400–800k Kč</span></div>
+        </div>
+        <div class="card card-accent" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">2. Optimalizovat welcome sekvenci (emaily 2–4)</h3>
+          <p>Email č. 1 generuje 226,9 Kč/email, emaily 2–4 jen 15–27 Kč. Testovat: personalizované produktové doporučení dle toho, co zákazník koupil v prvním nákupu; změnit timing (delší pauzy); silnější storytelling v emailu 2 (vzdělávací obsah o plánování).</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Vysoká</span><span class="pill">Potenciál: +30 % LTV</span></div>
+        </div>
+        <div class="card card-accent">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">3. Posílit Klub segment — jádro email strategie</h3>
+          <p>Klub newsletter dosahuje 10–11 Kč/email vs. 3–5 Kč u zákazníků. Cíl: aktivně přesouvat zákazníky do Klubu (komunikovat benefity po každém nákupu), rozšiřovat Klub o early access nabídky, exkluzivní novinky a personalizovaný obsah.</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Vysoká</span><span class="pill">Cíl: 2× velikost Klub segmentu</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-accent" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">4. Zvýšit AOV přes cross-sell bundles</h3>
+          <p>65 % objednávek je pod 600 Kč, doprava zdarma nad 1 600 Kč. Emailová série zaměřená na <strong>"dopluň košík"</strong> — náplně + pero + samolepky v jednom setu. "Doprava zdarma — připomínka" automation posílá, ale má jen 3,4 Kč/email — revize obsahu a CTA může dramaticky zlepšit výkon.</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Střední</span><span class="pill">Cíl: AOV 700 Kč+</span></div>
+        </div>
+        <div class="card card-accent" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">5. Q4 přípravu zahájit v srpnu</h3>
+          <p>Říjen–leden = 45 % obratu. V roce 2025 nebyl srpen aktivní emailově vůbec (1 kampaň). Přitom právě srpen je čas na přípravu: adventní kampaně, Black Friday série, vánoční průvodce, novoroční plánování. Vše připravit předem, neplánovat za pochodu v říjnu.</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Střední-Vysoká</span><span class="pill">Okno: Aug–Jan</span></div>
+        </div>
+        <div class="card card-accent">
+          <h3 style="font-size: 1rem; margin-bottom: 12px;">6. Aktivovat sezónní automations ve správné čas</h3>
+          <p>Adventní kalendář má <strong>95,6 % OR a 93,5 Kč/email</strong> — nejlepší OR ze všech automations. Spouštět výhradně v říjnu–prosinci. Mystery box flows aktivovat v sezoně (léto, vánoce). Přání k svátku již funguje skvěle (7,8 Kč/email, 11 388 odeslaných).</p>
+          <div class="pill-list"><span class="pill accent">Priorita: Střední</span><span class="pill">Sezónní kalibrace</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-heading">Segmentační mapa</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Segment</th><th>Definice</th><th>Obsah</th><th>Frekvence</th><th>Benchmark rev/email</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Klub</strong></td><td>Loajální zákazníci, premium segment</td><td>Early access, exkluzivní novinky, personalizace</td><td>4–5× měsíčně</td><td><strong>10–11 Kč</strong></td></tr>
+          <tr><td><strong>Zákazníci</strong></td><td>Koupili, ale nejsou v Klubu</td><td>Novinky, akce, sezónní inspirace</td><td>3–4× měsíčně</td><td>3–5 Kč</td></tr>
+          <tr><td><strong>Noví zákazníci</strong></td><td>1. nákup &lt; 30 dní</td><td>Welcome séquence (4 emaily + s/bez kód)</td><td>Automation</td><td><strong>15–227 Kč</strong></td></tr>
+          <tr><td><strong>Opuštěné košíky</strong></td><td>Přidal do košíku, nekoupil</td><td>Připomínka + urgence (2h, 24h, 72h)</td><td>Automation</td><td><strong>35–225 Kč</strong></td></tr>
+          <tr><td><strong>Svátky &amp; narozeniny</strong></td><td>Datum svátku/narozenin</td><td>Personalizované přání + nabídka</td><td>1× ročně</td><td><strong>7,8 Kč</strong> (11k sent)</td></tr>
+          <tr><td><strong>Spící zákazníci</strong></td><td>Žádný nákup 6+ měsíců</td><td>Win-back série: novinky → sleva → last call</td><td>Win-back flow</td><td>2–4 Kč (odhad)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SEKCE: OBECNÁ MARKETINGOVÁ DOPORUČENÍ -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Marketing</span>
+      <h2>Obecná marketingová doporučení</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="sub-heading" style="margin-top: 0;">Zákaznická retence a CLV</div>
+    <div class="two-col">
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">RFM segmentace</h3>
+        <p>fleppi má data na RFM analýzu (Recency, Frequency, Monetary). Zákazníci rozdělení do 4 skupin: <strong>Champions</strong> (koupili nedávno, často, hodně), <strong>Loyal</strong> (koupili vícekrát), <strong>At Risk</strong> (kdysi aktivní, nyní ticho), <strong>Lost</strong>. Každá skupina = jiná komunikační strategie.</p>
+        <div class="pill-list"><span class="pill accent">Měřit: podíl Champions</span><span class="pill">Cíl: 15–20 % báze</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">Net Promoter Score</h3>
+        <p>Zavedení NPS dotazníku (3 otázky, 2 minuty) po každém doručení. fleppi má silnou komunitu — NPS může být 60+. Zákazníci kteří doporučují = nižší akvizační náklady.</p>
+        <div class="pill-list"><span class="pill accent">Měřit čtvrtletně</span><span class="pill">Cíl: NPS &gt;50</span></div>
+      </div>
+    </div>
+
+    <div class="sub-heading">Akvizice a traffic</div>
+    <div class="two-col">
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">SEO pro planning niche</h3>
+        <p>Blog s tématy "jak si nastavit diář", "bullet journal vs. planner", "nejlepší náplně do Filofaxu 2027". Tyto dotazy mají nízkou konkurenci v češtině. Organický traffic = bezplatná akvizice.</p>
+        <div class="pill-list"><span class="pill accent">Měřit: organické sessions</span><span class="pill">Cíl: +20 % YoY</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">Pinterest jako akviziční kanál</h3>
+        <p>Planning/stationery niche je dominantně na Pinterestu. Produktové piny s cenami vedou přímo do eshopu. Investice: 2 hodiny týdně, výsledek: pasivní traffic s vysokým purchase intent.</p>
+        <div class="pill-list"><span class="pill accent">Měřit: Pinterest referral sessions</span><span class="pill">+ konverzní rate</span></div>
+      </div>
+    </div>
+
+    <div class="sub-heading">Měření a vyhodnocování</div>
+    <div class="three-col">
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">Klíčové metriky (KPI dashboard)</h3>
+        <p>Měsíční revenue (s DPH/bez DPH), počet objednávek, AOV, počet nových vs. vracejících zákazníků, email revenue jako % celku, OR a CTR automations. Vyhodnocovat měsíčně, srovnávat YoY.</p>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">Cohort analýza retence</h3>
+        <p>Sledovat co se děje se zákazníky z každého kvartálu — kolik z Q1/2025 zákazníků nakoupilo znovu v Q2, Q3, Q4? Toto odhalí, zda retence roste nebo klesá.</p>
+        <div class="pill-list"><span class="pill accent">Cíl: 90denní retence &gt;25 %</span></div>
+      </div>
+      <div class="card card-accent">
+        <h3 style="font-size: 1rem; margin-bottom: 12px;">Atribuční model</h3>
+        <p>Nasadit správně UTM parametry (email + social + organic). Bez toho nelze říct, kolik % revenue pochází z jakého kanálu. Aktuální data jsou jen z Leadhubu — chybí pohled přes GA4.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCE 6: 365 DNÍ -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Akční plán</span>
+      <h2>365 dní — konkrétní kroky</h2>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="legend">
+      <span><span class="legend-dot" style="background:#f87171;"></span>Vysoká priorita</span>
+      <span><span class="legend-dot" style="background:#fbbf24;"></span>Střední priorita</span>
+      <span><span class="legend-dot" style="background:#4ade80;"></span>Nízká priorita</span>
+    </div>
+
+    <!-- Q2 2026 -->
+    <div class="quarter-block">
+      <div class="quarter-label">Q2 2026</div>
+      <div class="quarter-title">Duben – Červen 2026 | Základy &amp; opravy</div>
+      <div class="tasks">
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Diagnostika a oprava abandoned cart trackingu<span class="task-tag tag-ops">Technické</span></div>
+            <div class="task-desc">Spustit testovací nákupy, zkontrolovat Shoptet → Leadhub webhook. Za rok bylo odesláno 1 503 cart emailů při 13k objednávkách — zachycuje se zlomek. Cíl: 10× vyšší objem při zachování 200+ Kč/email. → Při 13k objednávkách ročně a 70% abandonment rate jde o potenciálně 9 000 nevyužitých triggerů. Oprava = přímý dopad 400–800k Kč/rok bez jediné nové kampaně.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Optimalizovat welcome emaily 2–4 — personalizace dle 1. nákupu<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Email č. 1 = 227 Kč/email, emaily 2–4 = 15–27 Kč. Přidat dynamický blok s produkty ze stejné kategorie jako první nákup zákazníka. Otestovat i delší timing mezi emaily (3–5 dní místo 1–2). → Email č. 1 generuje 227 Kč/email. Pokud emaily 2–4 dosáhnou jen 50 Kč/email, při 2 000 nových zákaznících/rok = +150k Kč navíc každý rok.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Optimalizovat "Doprava zdarma" automation — přidat konkrétní produkty<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">2 082 odeslaných emailů, pouze 3,4 Kč/email. Přidat carousel produktů "přidej do košíku a máš dopravu zdarma", countdown timer do konce akce a jasný vizuál kolik zákazníkovi chybí do free shipping.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Jarní kampaň — Duben (Velikonoce + nová kolekce)<span class="task-tag tag-email">Email</span><span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Navázat na vzorec z března 2025 (275k Kč, 12 kampaní). Série: zahřívání (preview novinek) + hlavní kampaň + last call. Zapojit produkty: sezónní samolepky, jarní náplně do diáře.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Aktivovat win-back flow pro 6+ měsíců bez nákupu<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">3-emailová série. Email 1: "Chybíš nám + novinky od tvého posledního nákupu". Email 2: "Top produkty tohoto roku". Email 3: "Doprava zdarma — poslední šance". Cíl reaktivace: 5 % z neaktivní báze. → Reaktivace 5 % z ~3 000 spících zákazníků = 150 nákupů × AOV 611 Kč = 91k Kč z jedné série. Opakovat 2× ročně.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Přidat UTM tracking do všech emailových odkazů<span class="task-tag tag-ops">Technické</span></div>
+            <div class="task-desc">Bez UTM parametrů nelze přesně měřit email → Shoptet konverze mimo Leadhub reporting. Přidat utm_source=leadhub&amp;utm_medium=email&amp;utm_campaign=[nazev] do všech automations i broadcast šablon.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 2026 -->
+    <div class="quarter-block">
+      <div class="quarter-label">Q3 2026</div>
+      <div class="quarter-title">Červenec – Září 2026 | Back-to-school sezóna &amp; příprava Q4</div>
+      <div class="tasks">
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Narozeninová kampaň — Červenec (kopírovat úspěch 2025: 382k Kč)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">V červenci 2025 narozeninová série vygenerovala 382k Kč z emailů (nejlepší broadcast měsíc roku). Replikovat strukturu: zahřívání 3× + spuštění + IG akce + výherní los + last call. Zahájit plánování v květnu. → Narozeninová série 2025 přinesla 382k Kč z emailu za jediný měsíc. Je to nejprofitabilnější emailový formát v historii fleppi — každý rok musí proběhnout.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Pokrýt srpen emailovou aktivitou (byl prázdný v 2025)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">V srpnu 2025 byl jen 1 email — přesto 846 objednávek. Minimálně 3–4 kampaně v srpnu: back-to-school série, preview podzimní kolekce, reaktivace zákazníků z léta. Cíl: +100k Kč email revenue vs. 2025. → Srpen 2024 = 312k Kč z emailu. Srpen 2025 = 19k Kč (1 kampaň). Rozdíl 293k Kč způsobila jen absence obsahu — ne trh, ne zákazníci.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Zahájit Q4 přípravu v srpnu — obsah, šablony, automations<span class="task-tag tag-ops">Plánování</span></div>
+            <div class="task-desc">Adventní kalendář, Black Friday série (4 emaily), vánoční průvodce, novoroční flow — vše napsat a schválit do 30. září. V říjnu jen spouštět a optimalizovat, netvoři. Adventní automation aktivovat 1. října, deaktivovat 6. ledna.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Back-to-school Říjen série — kopírovat vzor 2025 (409k Kč)<span class="task-tag tag-email">Email</span><span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Říjen 2025 byl nejlepší email měsíc díky Velkému týdnu malých firem (107k) + Novinky Klub (80k) + Newsletter. Navrhnout a naplánovat říjenský email kalendář předem. "Velký týden" replikovat jako výroční kampaň.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Aktivovat mystery box flows v letní sezóně<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Mystery box automation pro browse abandonment + post-purchase flow spustit na léto a podzim. Mystery boxy jsou prémiový produkt — zpřístupnit zákazníkům přes email, ne jen organicky.</div>
+          </div>
+        </div>
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">A/B test předmětových řádků na 3 kampaních<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Testovat: emoji vs. bez emoji, otázka vs. výrok, krátký (&lt;40 znaků) vs. dlouhý. Klub newsletter (OR 29–34 %) vs. zákazníci (OR 22–25 %) — pochopit co zvyšuje otevírání a replikovat na slabší segment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 2026 -->
+    <div class="quarter-block">
+      <div class="quarter-label">Q4 2026</div>
+      <div class="quarter-title">Říjen – Prosinec 2026 | Hlavní sezóna</div>
+      <div class="tasks">
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Replikovat "Velký týden" — říjen (107k Kč v 2025)<span class="task-tag tag-email">Email</span><span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Kampaň "Velký týden malých firem" dosáhla 107k Kč z jediné rozesílky. Navrhnout jako roční kampaňový formát s příběhem, limitovanými produkty nebo spolupráci. Kombinovat s Klubem pro early access. → Velký týden malých firem 2025 = 107k Kč z jediného emailu na 9k příjemců = 11,5 Kč/email. Jako roční formát může trvale přidat 100–150k Kč do říjnového obratu.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Black Friday série — 4 emaily (připravit v září)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Email 1: Early access Klub (24h před). Email 2: BF spuštění pro všechny. Email 3: Poslední hodiny. Email 4: Cyber Monday pro ty, kdo nekoupili. Klub dostane lepší podmínky → posílení Klub loajality.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Adventní automation — spustit 1. října, deaktivovat 6. ledna<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Adventní kalendář má 95,6 % OR a 93,5 Kč/email. Aktivovat jako browse-triggered automation po dobu říjen–prosinec. Po Vánocích deaktivovat. V roce 2025 bylo odesláno jen 270 emailů — scale up na min. 2 000+.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Vánoční dárkový průvodce (Newsletter + Klub verze)<span class="task-tag tag-email">Email</span><span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Série: "Tipy na dárky pro milovníky plánování" — samolepky + náplně + psací potřeby jako sety. Emily in Paris email (57k Kč) ukazuje, že produktový storytelling funguje. Klub dostane průvodce o týden dříve.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Novinky 11/2025 — Klub měl 52k Kč (OR 34,9 %) — replikovat formát<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Listopadu 2025 Klub email dosáhl nejlepšího OR v roce (34,9 %). Analyzovat obsah tohoto emailu a replikovat formát pro listopad 2026 — pravděpodobně kombinace novinek + konkrétní produkty + personální tón.</div>
+          </div>
+        </div>
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Osobní poděkování zákazníkům za rok (Vánoce 2026)<span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Vánoční poděkování 2025 dosáhlo 14k Kč při 11k odeslaných — slabý revenue ale silný brand. Přidat v roce 2026 personalizaci: "Nakoupila jsi u nás X× a tvoje nejoblíbenější kategorie je Y." Posílit emocionální vazbu.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q1 2027 -->
+    <div class="quarter-block">
+      <div class="quarter-label">Q1 2027</div>
+      <div class="quarter-title">Leden – Březen 2027 | Novoroční plánování &amp; retence</div>
+      <div class="tasks">
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Novoroční série — "Nový rok, nový diář" (leden = rekordní 1 472 obj.)<span class="task-tag tag-email">Email</span><span class="task-tag tag-content">Obsah</span></div>
+            <div class="task-desc">Série 4 emailů: "Nastav si cíle pro 2027", "Průvodce plánováním s fleppi", "Top produkty pro produktivní rok", "Social proof — jak to dělají naše zákaznice". Spustit 28. 12. 2026 → 10. 1. 2027. V lednu 2026 byl rekord v počtu objednávek.</div>
+          </div>
+        </div>
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Q4 retence — follow-up pro nové vánoční zákazníky<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Zákazníci z Q4 = pravděpodobně nejméně loajální (darování, sezónní). Série: "Jak se ti líbí tvůj nákup?", tip na použití zakoupených produktů, pozvání do Klubu. Cíl: 15 % z Q4 zákazníků přemění na opakující se kupce.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Valentýn — série 3 emailů (únor 2027)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Samolepky Srdíčka jsou v top produktech, přání k svátku funguje. Série: "Dárky pro plánováče" (7. 2.), "Valentýnský set" (12. 2.), "Poslední šance" (13. 2.). Navázat na vzorec z dubna 2025 (24H výprodej: 232k Kč).</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Jarní novinky — preview pro Klub (early access)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Únor/březen — jarní kolekce samolepek a náplní jako early access pro Klub segment týden před spuštěním pro ostatní. Posiluje hodnotu členství v Klubu, zvyšuje loajalitu a konverzi nejcennějšího segmentu.</div>
+          </div>
+        </div>
+        <div class="task priority-mid">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Spustit 2+1 / 4+1 akci v březnu 2027 (Mar 2025: 275k Kč z emailu)<span class="task-tag tag-email">Email</span></div>
+            <div class="task-desc">Březnová 2+1 akce 2025 vygenerovala přes 275k Kč z emailu za jediný týden (6 emailů v sérii). Naplánovat jako roční kampaňový formát — zahřívání → spuštění → emoce → dárek → last call → last hour. Zahájit přípravu v únoru.</div>
+          </div>
+        </div>
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-body">
+            <div class="task-title">Roční email audit — vyhodnocení a plán na 2027–2028<span class="task-tag tag-ops">Plánování</span></div>
+            <div class="task-desc">Projít všechny automations a broadcast výsledky za rok. Identifikovat: nejlepší rev/email formáty, segmenty s nejvyšší konverzí, témata s nejlepším OR. Na základě dat sestavit email plán Q2–Q4 2027. Benchmark cíl: email revenue 5M+ Kč.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTNOTE -->
+  <div class="footnote">
+    <p>Strategický dokument vygenerován na základě dat ze Shoptet (2024: 15 888 objednávek; 2025: 13 026 objednávek) a Leadhub (120+ kampaní a automations, Mar 2024–Mar 2026 + screenshoty uvítací sekvence). AOV a revenue uváděny s DPH, kde není uvedeno jinak. Meziroční srovnání počítá shodné kalendářní měsíce (Led–Pro). &nbsp;·&nbsp; Vytvořeno: duben 2026 &nbsp;·&nbsp; <strong>Aethero — E-mail Strategy</strong></p>
+  </div>
+
+</div>
+</body>
+</html>
